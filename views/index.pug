@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        title Express Apps
+        link(rel='stylesheet' href="style.css" type='text/css')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    body
+        div.container.margin-b-50
+            div.text-center
+                h1 All Posts
+            table
+                thead
+                    tr
+                        th Id
+                        th UserId
+                        th Title
+                        th Body
+                        th Auther
+        
+                each post in posts
+                    tr
+                        td= post.id
+                        td= post.userId
+                        td= post.title
+                        td= post.body
+                        td= users[post.userId].name
+
