@@ -8,11 +8,10 @@ function addPosts(pPost) {
 
             var dbo = db.db("jsonplaceholder");
             dbo.collection("posts").insertMany(pPost, function(err, res) {
-                if (err) throw err;
+                if (err) return console.log(err);
                 console.log("Number of documents inserted: " + res.insertedCount);
                 db.close();
             });
-            db.close();
         });
 }
 
@@ -24,7 +23,7 @@ function getPosts() {
 
                 var dbo = db.db("jsonplaceholder");
                 dbo.collection("posts").find({}).toArray(function(err, result) {
-                    if (err) throw err;
+                    if (err) return reject(err) ;
                     resolve(result);
                     db.close();
                   });

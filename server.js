@@ -1,6 +1,6 @@
 const express = require('express');
-const db = require("./database");
 const path = require("path");
+const db = require("./database");
 const fetchUsers = require("./fetchUsers");
 
 const server = express();
